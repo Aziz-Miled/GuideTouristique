@@ -1,0 +1,71 @@
+{% extends 'basefront.html.twig' %}
+
+{% block pagecontent %}
+
+
+<!-- food section -->
+
+<section class="food_section layout_padding-bottom">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Our Guide
+            </h2>
+        </div>
+        <ul class="filters_menu">
+            <li class="active" data-filter="*">Restaurations</li>
+            <li data-filter=".burger" class="">Hotels</li>
+            <li data-filter=".pizza" class="">Zones Touristiques</li>
+            <li data-filter=".pasta" class="">zones Archéologiques</li>
+            <li data-filter=".fries" class="">aaaaaa</li>
+        </ul>
+
+        <div class="filters-content">
+
+            <div class="row grid">
+
+                    {% for restauration in restaurations %}
+                <div class="col-sm-6 col-lg-4 all piza ">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="{{ asset(restauration.image) }} " alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                 Nom :  {{ restauration.nom }}
+                                </h5>
+
+                                <p> telephone : {{ restauration.tel }} </p>
+
+                                <p> Email :   {{ restauration.email }}</p>
+
+                                <p> Page Web :  {{ restauration.pageWeb }}   </p>
+
+                                <p> Adresse : {{ restauration.adresse }}</p>
+
+                                    <div class="options">
+                                        <a href="{{ path('menu_show', {'id': restauration.menu.id}) }}"></a>
+
+
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    {% endfor %}
+
+
+            </div>
+
+        <div class="btn-box">
+            <a href="">
+                View More
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- end food section -->
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'basemenu.html.twig' %}
+
+
+
+{% block aboutsection %}
+
+<section class="about_section layout_padding">
+    <div class="container  ">
+
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="img-box">
+                    <img src="{{  asset('../front/images/about-img.png') }}" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-box">
+
+                    <div class="heading_container">
+                        <h2>
+                            Boissons:
+                            {% for groups in menu.boissons %}
+
+                                <li>{{ groups.name }}</li>
+
+                            {% endfor %}
+                        </h2>
+                    </div>
+                    <div class="heading_container">
+                        <h2>
+                            Plats:
+                            {% for groups in menu.plat %}
+
+                                <li>{{ groups.name }}</li>
+
+                            {% endfor %}
+                        </h2>
+                    </div>
+
+                    <div class="heading_container">
+                        <h2>
+                            Cafee:
+                            {% for groups in menu.cafe %}
+
+                                <li>{{ groups.name }}</li>
+
+                            {% endfor %}
+                        </h2>
+                    </div>
+                    <div class="heading_container">
+                        <h2>
+                            Restauration:
+                            <li>
+                            {{ menu.restauration.nom }}
+                            </li>
+                        </h2>
+                    </div>
+
+
+                    <a href="">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
